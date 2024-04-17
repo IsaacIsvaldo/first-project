@@ -8,4 +8,13 @@ export default class MomentsController {
   async index() {
     return this.momentService.all()
   }
+  async show(id: number) {
+    return this.momentService.find(id)
+  }
+  async store(data: any) {
+    return this.momentService.create(data)
+  }
+  async update(id: number, data: any) {
+    return this.momentService.update(id, data)
+  }
 }

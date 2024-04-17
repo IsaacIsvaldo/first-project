@@ -10,4 +10,9 @@ export default class MomentService {
   async create(data: any) {
     return await Moment.create(data)
   }
+  async update(id: number, data: any) {
+    const moment = await Moment.findOrFail(id)
+    moment.$columns = data
+    await moment.save()
+  }
 }
