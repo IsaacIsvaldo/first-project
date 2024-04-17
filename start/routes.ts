@@ -13,7 +13,7 @@ router
   .group(() => {
     router.get('/', async () => {
       return {
-        hello: '---',
+        hello: 'Server Response OK',
       }
     })
     router.get('/moments', [MomentsController, 'index'])
