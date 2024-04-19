@@ -1,4 +1,4 @@
-import MomentService from '#services/moment_service'
+import MomentService from '../services/moment_service.js'
 import { inject } from '@adonisjs/core'
 //import { HttpContext } from '@adonisjs/core/http'
 

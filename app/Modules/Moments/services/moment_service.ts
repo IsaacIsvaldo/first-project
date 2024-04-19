@@ -1,4 +1,4 @@
-import Moment from '#models/moment'
+import Moment from '../models/moment.js'
 
 export default class MomentService {
   async all() {
