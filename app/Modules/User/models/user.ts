@@ -1,20 +1,19 @@
 import { DateTime } from 'luxon'
 import { BaseModel, column, hasMany } from '@adonisjs/lucid/orm'
-import { BelongsTo } from '@adonisjs/lucid/types/relations'
-import User from '../../User/models/user.js'
-export default class Moment extends BaseModel {
+import * as relations from '@adonisjs/lucid/types/relations'
+import Moment from '../../Moments/models/moment.js'
+
+export default class User extends BaseModel {
   @column({ isPrimary: true })
   declare id: number
   @column()
-  declare title: string
+  declare username: string
   @column()
-  declare description: string
+  declare email: string
   @column()
-  declare image: string
-  @column()
-  declare userId: number
-  @belongsTo(() => User)
-  user: BelongsTo<typeof User>
+  declare password: string
+  @hasMany(() => Moment)
+  declare moments: relations.HasMany<typeof Moment>
   @column.dateTime({ autoCreate: true })
   declare createdAt: DateTime
   @column.dateTime({ autoCreate: true, autoUpdate: true })
